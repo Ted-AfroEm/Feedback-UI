@@ -1,10 +1,10 @@
 import { useState, useContext, useEffect } from "react";
-import FeedbackContext from "../context/FeedbackContext.tsx";
+import FeedbackContext from "../context/FeedbackContext";
 import Card from "./shared/Card";
 import Button from "./shared/Button.tsx";
-import RatingSelect from "./RatingSelect.tsx";
+import RatingSelect from "./RatingSelect";
 
-const FeedbackForm = ({ handleAdd }) => {
+const FeedbackForm = () => {
   const { addFeedback, feedbackEdit, updateFeedback } =
     useContext(FeedbackContext);
 

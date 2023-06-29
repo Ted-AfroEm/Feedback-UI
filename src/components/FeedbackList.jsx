@@ -1,9 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useContext } from "react";
-import FeedbackContext from "../context/FeedbackContext.tsx";
+import FeedbackContext from "../context/FeedbackContext";
 import FeedbackItem from "./FeedbackItem";
 
-const FeedbackList = ({}) => {
+const FeedbackList = () => {
   const { feedback } = useContext(FeedbackContext);
   if (!feedback || feedback.length === 0) {
     return <p>No Feedback Yet</p>;
