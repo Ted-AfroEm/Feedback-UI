@@ -4,7 +4,7 @@ import FeedbackContext from "../context/FeedbackContext.tsx";
 import FeedbackItem from "./FeedbackItem";
 
 const FeedbackList = ({}) => {
-  const { feedback, handleDelete } = useContext(FeedbackContext);
+  const { feedback } = useContext(FeedbackContext);
   if (!feedback || feedback.length === 0) {
     return <p>No Feedback Yet</p>;
   }
@@ -25,14 +25,6 @@ const FeedbackList = ({}) => {
       </AnimatePresence>
     </div>
   );
-
-  // return (
-  //   <div className="feedback-list">
-  //     {feedback.map((item) => (
-  //       <FeedbackItem item={item} key={item.id} handleDelete={handleDelete} />
-  //     ))}
-  //   </div>
-  // );
 };
 
 export default FeedbackList;
