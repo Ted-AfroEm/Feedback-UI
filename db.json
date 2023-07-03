@@ -9,6 +9,46 @@
       "id": 2,
       "rating": 7,
       "text": "edittedd"
+    },
+    {
+      "rating": "9",
+      "text": "New feedbakc item",
+      "id": 3
+    },
+    {
+      "rating": 10,
+      "text": "asfasfaasdads",
+      "id": 4
+    },
+    {
+      "rating": 3,
+      "text": "Add new feed back",
+      "id": 5
+    },
+    {
+      "rating": 7,
+      "text": "sdddddddddddd",
+      "id": 6
+    },
+    {
+      "rating": 10,
+      "text": "rrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+      "id": 7
+    },
+    {
+      "rating": 10,
+      "text": "This is test",
+      "id": 8
+    },
+    {
+      "rating": 7,
+      "text": "Just test review",
+      "id": 9
+    },
+    {
+      "rating": 2,
+      "text": "May be just test ",
+      "id": 10
     }
   ]
 }
