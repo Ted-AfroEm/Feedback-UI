@@ -1,6 +1,4 @@
 import React, { createContext, useState, useEffect } from "react";
-import FeedbackData from "../data/FeedbackData";
-import { v4 as uuidv4 } from "uuid";
 
 const FeedbackContext = createContext("");
 
@@ -25,9 +23,14 @@ export const FeedbackProvider = ({ children }) => {
     setIsLoading(false);
   };
 
-  const deleteFeedback = (id) => {
+  const deleteFeedback = async (id) => {
     if (window.confirm("Are you sure you want to delete?")) {
-      setFeedback(feedback.filter((comment) => comment.id !== id));
+      const response = await fetch(`/feedback/${id}`, {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        setFeedback(feedback.filter((comment) => comment.id !== id));
+      }
     }
   };
 
@@ -43,7 +46,15 @@ export const FeedbackProvider = ({ children }) => {
     setFeedback([data, ...feedback]);
   };
 
-  const updateFeedback = (id, updateItem) => {
+  const updateFeedback = async (id, updateItem) => {
+    const response = await fetch(`/feedback/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updateItem),
+    });
+    const data = await response.json();
     setFeedback(
       feedback.map((currentFeedback) =>
         currentFeedback.id === id
